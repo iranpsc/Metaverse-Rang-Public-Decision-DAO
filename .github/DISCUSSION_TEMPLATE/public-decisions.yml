@@ -1,0 +1,113 @@
+title: "[DECISION] "
+labels:
+  - "status: pending-consensus"
+  - "engine: had-e-tasar"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 🏛️ MetaRang Public Decision Registration Portal (Charter v2)
+        Welcome to the official decision creation gateway. Before submitting:
+        * You must hold **100% of your intrinsic Impact Limit capacity** unspent and unleased via your connected **MetaRang SSO / Decentralized Wallet**.
+        * **100% of your Impact Limit will be locked as collateral** until the voting duration expires, and **you cannot vote on your own decision** or cancel it once submitted.
+        * Your decision scope must strictly target **your own governance tier or lower tiers**.
+
+  - type: input
+    id: citizen_id
+    attributes:
+      label: "1. Creator Citizen ID & Connected Wallet (شناسه شهروندی)"
+      description: "Enter your verified MetaRang Citizen ID (e.g., hm-2000001) linked to SSO/Wallet."
+      placeholder: "hm-XXXXXXX"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: creator_tier
+    attributes:
+      label: "2. Creator Intrinsic Governance Tier (سطح حاکمیتی و حد تأثیر ذاتی خالق)"
+      description: "Select your current verified role level. AI Guardrail will verify that 100% of this capacity is available to stake."
+      options:
+        - "Tier 1: Citizen (شهروند) — 1 Impact Unit | Quorum: 100 | Duration: 24h"
+        - "Tier 2: Reporter (خبرنگار) — 3 Impact Units | Quorum: 300 | Duration: 36h"
+        - "Tier 3: Contributor (مشارکت‌کننده) — 8 Impact Units | Quorum: 800 | Duration: 48h"
+        - "Tier 4: Developer (توسعه‌دهنده) — 18 Impact Units | Quorum: 1,800 | Duration: 72h"
+        - "Tier 5: Inspector (بازرس) — 36 Impact Units | Quorum: 3,600 | Duration: 96h"
+        - "Tier 6: Merchant (تاجر) — 76 Impact Units | Quorum: 7,600 | Duration: 120h"
+        - "Tier 7: Advocate (دادخواه) — 166 Impact Units | Quorum: 16,600 | Duration: 144h"
+        - "Tier 8: City Council (شورای شهر) — 366 Impact Units | Quorum: 36,600 | Duration: 168h"
+        - "Tier 9: Mayor (شهردار) — 796 Impact Units | Quorum: 79,600 | Duration: 192h"
+        - "Tier 10: Governor (فرماندار) — 1,696 Impact Units | Quorum: 169,600 | Duration: 216h"
+        - "Tier 11: Commissioner (کارگزار) — 3,696 Impact Units | Quorum: 369,600 | Duration: 240h"
+        - "Tier 12: Arbitrator (داور) — 7,896 Impact Units | Quorum: 789,600 | Duration: 288h"
+        - "Tier 13: Legislator (دادگذار) — 16,369 Impact Units | Quorum: 1,636,900 | Duration: 336h"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: target_tier
+    attributes:
+      label: "3. Target Decision Governance Tier (سطح هدف تصمیم)"
+      description: "Must be equal to or lower than your Creator Governance Tier. Higher-tier voters participating in this decision will be subject to Progressive Burn and Impact Decay."
+      options:
+        - "Tier 1: Citizen (شهروند) — General Community & Micro-Participation"
+        - "Tier 2: Reporter (خبرنگار) — Media, Notifications & Content Reporting"
+        - "Tier 3: Contributor (مشارکت‌کننده) — Social & Community Engagement"
+        - "Tier 4: Developer (توسعه‌دهنده) — Technical Infrastructure & Open-Source Code"
+        - "Tier 5: Inspector (بازرس) — Quality Control, Security Audit & 3D Asset Validation"
+        - "Tier 6: Merchant (تاجر) — Commercial Cycles & Marketplace Rules"
+        - "Tier 7: Advocate (دادخواه) — Citizen Rights & Legal Framework"
+        - "Tier 8: City Council (شورای شهر) — Local Policy & Urban Proposals"
+        - "Tier 9: Mayor (شهردار) — Land Subdivision, Consolidation & Municipal Execution"
+        - "Tier 10: Governor (فرماندار) — Regional & Provincial Balanced Development"
+        - "Tier 11: Commissioner (کارگزار) — Macro-Policy & Governance Fund Loans"
+        - "Tier 12: Arbitrator (داور) — Structural Dispute Resolution & Judicial Rulings"
+        - "Tier 13: Legislator (دادگذار) — Foundational Laws & Constitutional Governance"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: target_repository
+    attributes:
+      label: "4. Target Execution Repository for Auto-Delegation (ریپازیتوری مقصد جهت ایجاد خودکار Issue)"
+      description: "Upon reaching Approved status (even by a 1-unit margin), where should the actionable GitHub Issue be automatically generated?"
+      options:
+        - "iranpsc/Metaverse-Rang-Public-Decision-DAO (Governance Laws & Executive Charters)"
+        - "iranpsc/Metaverse-Rang-Front-NextJS (Frontend UI/UX & Citizen Portal)"
+        - "iranpsc/Metaverse-Rang-Microservice (Go Backend Microservices & APIs)"
+        - "iranpsc/Metaverse-Rang-World-3D-Multiverse (Unity 3D Engine & WebGL World)"
+        - "iranpsc/3DMeta-Shop-Object-3D (3D Digital Assets & Blender Models)"
+        - "iranpsc/Metaverse-Rang-Geographical-Maps (Coordinate Systems & Land Maps)"
+        - "iranpsc/SSO-Paradise-Supply-Chain-Go (Authentication, SSO & Security)"
+        - "iranpsc/Metaverse-Rang-PSC-Governance-Coin (Smart Contracts & PSC Tokenomics)"
+        - "iranpsc/Multiverse-Foundation (Core Standards & DSL Specifications)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: decision_specification
+    attributes:
+      label: "5. Executive Decision Specification & Technical Scope (شرح دقیق تصمیم و الزامات اجرایی)"
+      description: "Provide a clear, unambiguous specification of the proposed change, law, feature, or asset validation."
+      placeholder: |
+        ### Objective
+        Describe the exact goal of this decision...
+
+        ### Proposed Implementation / Rule Change
+        1. ...
+        2. ...
+
+        ### Measurable Acceptance Criteria
+        - [ ] Criterion 1
+        - [ ] Criterion 2
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: charter_acknowledgement
+    attributes:
+      label: "6. Irrevocable Staking & Protocol Binding Agreement (تعهدنامه قوانین حد تأثیر)"
+      options:
+        - label: "I confirm that I hold 100% intrinsic ownership of my tier's Impact Limit (not leased) and accept that it will be locked for the entire duration of this decision."
+          required: true
+        - label: "I acknowledge that I cannot vote on or cancel this decision, and if rejected, my recharge lock time will increase exponentially according to the Progressive Failure Penalty formula."
+          required: true
