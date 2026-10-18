@@ -1,0 +1,25 @@
+name = "metarang-public-decision-dao"
+main = "workers/index.ts"
+compatibility_date = "2025-02-14"
+workers_dev = true
+
+# اتصال به هوش مصنوعی لبه شبکه کلادفلر جهت ممیزی سطح تصمیم و سپر ضد تبانی
+[ai]
+binding = "AI"
+
+# تعریف موتور محاسباتی وضعیت پایدار (Durable Objects) برای شارژ دوگانه و تایمر تصمیمات
+[durable_objects]
+bindings = [
+  { name = "IMPACT_ENGINE_DO", class_name = "ImpactEngineDO" }
+]
+
+[[migrations]]
+tag = "v2.0.0-initial-dao-engine"
+new_sqlite_classes = ["ImpactEngineDO"]
+
+[vars]
+GITHUB_OWNER = "iranpsc"
+GITHUB_DAO_REPO = "Metaverse-Rang-Public-Decision-DAO"
+PSC_ADVISORS_CREATOR_SHARE_RATIO = "0.50"
+COOLDOWN_SECONDS = "60"
+MIN_VOTE_UNIT = "1"
